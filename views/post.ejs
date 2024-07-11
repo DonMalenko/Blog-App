@@ -1,0 +1,10 @@
+<%- include('layouts/layout.ejs') %>
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+<p><em>Posted on: <%= post.date %></em></p>
+<a href="/edit/<%= postId %>">Edit</a>
+<form action="/delete/<%= postId %>" method="post" style="display:inline; padding: 3px;">
+    <button type="submit">Delete</button>
+</form>
+
+<%- include('layouts/footer.ejs') %>

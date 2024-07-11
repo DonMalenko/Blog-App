@@ -1,0 +1,13 @@
+<%- include('layouts/layout.ejs') %>
+<h1>All Posts</h1>
+<% posts.forEach((post, index) => { %>
+    <div class="post">
+        <h2><a href="/post/<%= index %>"><%= post.title %></a></h2>
+        <p><%= post.content.substring(0, 100) %>...</p>
+        <a href="/edit/<%= index %>">Edit</a>
+        <form action="/delete/<%= index %>" method="post" style="display:inline; padding: 3px;">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+<% }) %>
+<%- include('layouts/footer.ejs') %>
